@@ -1,0 +1,83 @@
+@import "../lib/vars";
+
+.Hero {
+  min-height: 100vh;
+  background: rgb(33, 16, 48);
+  background: linear-gradient(
+    315deg,
+    rgba(33, 16, 48, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  color: $color-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  & h1 {
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  & .List {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & li {
+      margin: 0;
+    }
+
+    & li:nth-child(2) {
+      margin-left: 3rem;
+    }
+  }
+
+  & .start {
+    position: absolute;
+    height: 5px;
+    width: 5px;
+    background-color: $color-white;
+    top: 15px;
+    border-radius: 50%;
+    transition: 0.3s;
+    animation: animation_start 2s infinite;
+    box-shadow: 0px 1px 5px $color-white;
+  }
+
+  & .start-2 {
+    @extend .start;
+    top: 50px;
+    left: 300px;
+    animation-delay: 0.3s;
+  }
+
+  & .start-3 {
+    @extend .start;
+    top: 100px;
+    left: 500px;
+    animation-delay: 0.2s;
+  }
+
+  & .start-4 {
+    @extend .start;
+    top: 500px;
+    left: 700px;
+    animation-delay: 0.5s;
+  }
+
+  @keyframes animation_start {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
