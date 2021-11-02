@@ -1,5 +1,7 @@
 import React from "react";
 
+import { HeroCloud } from "../components/HeroCloud";
+
 import "../styles/containers/Hero.scss";
 
 function Hero() {
@@ -16,6 +18,8 @@ function Hero() {
       <div className="start-2"></div>
       <div className="start-3"></div>
       <div className="start-4"></div>
+
+      <HeroCloud />
     </section>
   );
 }
