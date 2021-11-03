@@ -1,0 +1,49 @@
+/*--------------------------------------------------------*\
+|*                   HERO-SURFACE                          *|
+\*--------------------------------------------------------*/
+
+@import "../lib/vars";
+
+.hero_position {
+  position: absolute;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: $hero-surface;
+}
+
+.HeroSurface {
+  @extend .hero_position;
+
+  & .surface {
+    @extend .hero_position;
+    background-image: url("../../assets/img/hero_footer.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position-y: 100%;
+    opacity: 0.1;
+  }
+
+  & .fog {
+    @extend .hero_position;
+    background-image: url("../../assets/img/clouds-texture.png");
+    height: 40%;
+    // background-position-x: 0px;
+    width: 100%;
+    transition: 0.3s;
+    opacity: 0.3;
+    // animation: cloud_moved 10s linear infinite;
+  }
+}
+
+@keyframes cloud_moved {
+  0% {
+    // transform: translateX(-100%);
+    background-position-x: -100%;
+  }
+  100% {
+    // transform: translateX(100%);
+    background-position-x: 100%;
+  }
+}

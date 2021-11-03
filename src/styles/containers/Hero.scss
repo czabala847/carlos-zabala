@@ -1,4 +1,9 @@
+/*--------------------------------------------------------*\
+|*                        HERO                            *|
+\*--------------------------------------------------------*/
+
 @import "../lib/vars";
+@import "../lib/containers";
 
 .Hero {
   min-height: 100vh;
@@ -9,16 +14,14 @@
     rgba(0, 0, 0, 1) 100%
   );
   color: $color-white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend .f-center;
   flex-direction: column;
   position: relative;
 
   & h1 {
     font-size: 4rem;
     font-weight: 700;
-    z-index: 2;
+    z-index: $hero-zindex;
   }
 
   & .List {
@@ -27,7 +30,7 @@
     list-style: none;
     margin: 0;
     padding: 0;
-    z-index: 2;
+    z-index: $hero-zindex;
 
     & li {
       margin: 0;
@@ -81,19 +84,5 @@
     100% {
       opacity: 1;
     }
-  }
-
-  &_footer {
-    height: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-image: url("../../assets/img/hero_footer.png");
-    background-size: 100%;
-    background-repeat: no-repeat;
-    z-index: 1;
-    background-position-y: 100%;
-    opacity: 0.2;
   }
 }

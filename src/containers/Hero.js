@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HeroCloud } from "../components/HeroCloud";
+import { HeroSurface } from "../components/HeroSurface";
 
 import "../styles/containers/Hero.scss";
 
@@ -19,7 +19,7 @@ function Hero() {
       <div className="start-3"></div>
       <div className="start-4"></div>
 
-      <div className="Hero_footer"></div>
+      <HeroSurface />
     </section>
   );
 }
