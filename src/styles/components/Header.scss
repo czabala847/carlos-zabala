@@ -12,12 +12,17 @@
   height: $header-height;
   position: fixed;
   z-index: $header-zindex;
+  box-sizing: border-box;
 
   &_container {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+}
+
+.Menu {
+  position: relative;
 
   &_icon {
     @extend .f-center;
@@ -28,28 +33,22 @@
     border-radius: 50%;
     cursor: pointer;
     transition: 0.3s;
+    position: relative;
 
     &:hover {
       transform: scale(0.9);
     }
   }
 
-  &_menu {
+  &_nav {
     position: absolute;
-    right: 200px;
+    right: 10px;
     top: $header-height;
     background-color: $color-white;
-    padding: 0.5rem 2rem;
+    padding: 0 1rem;
     border-radius: 10px;
-
-    & a {
-      text-decoration: none;
-      color: $color-black;
-
-      & span {
-        margin-left: 1rem;
-      }
-    }
+    box-sizing: border-box;
+    min-width: 250px;
 
     & ul {
       list-style: none;
@@ -58,7 +57,21 @@
 
     & li {
       margin: 0;
-      padding: 0.5rem 0;
+    }
+
+    & a {
+      padding: 0.5rem;
+      border-radius: 10px;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0.8);
+      display: grid;
+      grid-template-columns: 20% 1fr;
+      align-items: center;
+      transition: 0.3s;
+    }
+
+    & a:hover {
+      background-color: rgba(0, 0, 0, 0.1);
     }
   }
 }
