@@ -21,40 +21,45 @@ function Header() {
   };
 
   return (
-    <header className="Header container">
-      <div className="Header_container">
-        <figure className="Logo">Logo</figure>
+    <header className="Header">
+      <div className="container">
+        <div className="Header_container">
+          <figure className="Logo">Logo</figure>
 
-        <div className="Header_icon" onClick={handleShowMenu}>
-          <FontAwesomeIcon icon={showMenu ? faTimes : faBars} />
+          <div className="Menu">
+            <div className="Menu_icon" onClick={handleShowMenu}>
+              <FontAwesomeIcon icon={showMenu ? faTimes : faBars} />
+            </div>
+
+            {showMenu && (
+              <nav className="Menu_nav">
+                <ul>
+                  <li>
+                    <Link to="/">
+                      <FontAwesomeIcon icon={faHome} /> <span>Inicio</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/">
+                      <FontAwesomeIcon icon={faUser} /> <span>Acerca de</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/">
+                      <FontAwesomeIcon icon={faCogs} /> <span>Habilidades</span>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/">
+                      <FontAwesomeIcon icon={faFolderOpen} />
+                      <span>Portafolio</span>
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            )}
+          </div>
         </div>
-        {showMenu && (
-          <nav className="Header_menu">
-            <ul>
-              <li>
-                <Link to="/">
-                  <FontAwesomeIcon icon={faHome} /> <span>Inicio</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/">
-                  <FontAwesomeIcon icon={faUser} /> <span>Acerca de</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/">
-                  <FontAwesomeIcon icon={faCogs} /> <span>Habilidades</span>
-                </Link>
-              </li>
-              <li>
-                <Link to="/">
-                  <FontAwesomeIcon icon={faFolderOpen} />
-                  <span>Portafolio</span>
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        )}
       </div>
     </header>
   );
