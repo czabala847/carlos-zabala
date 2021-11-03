@@ -16,6 +16,8 @@ function Hero() {
       <div className="start-2"></div>
       <div className="start-3"></div>
       <div className="start-4"></div>
+
+      <div className="Hero_footer"></div>
     </section>
   );
 }
