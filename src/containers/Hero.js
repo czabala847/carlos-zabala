@@ -2,6 +2,7 @@ import React from "react";
 
 import { HeroStart } from "../components/HeroStart";
 import { HeroSurface } from "../components/HeroSurface";
+import { HeroCanvas } from "../components/HeroCanvas";
 
 import "../styles/containers/Hero.scss";
 
@@ -14,11 +15,13 @@ function Hero() {
         <li>Desarrollo Web</li>
       </ul>
 
+      {/* 
       {[...Array(50)].map((e, i) => (
         <HeroStart key={i} />
-      ))}
+      ))} */}
 
-      <HeroSurface />
+      <HeroCanvas />
+      {/* <HeroSurface /> */}
     </section>
   );
 }
