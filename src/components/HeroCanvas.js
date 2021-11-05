@@ -26,9 +26,9 @@ function HeroCanvas() {
 
     let xStart, yStart;
 
-    for (let index = 0; index < 60; index++) {
+    for (let index = 0; index < 70; index++) {
       xStart = randomNumber(0, widthCanvas);
-      yStart = randomNumber(0, heightCanvas);
+      yStart = randomNumber(0, heightCanvas * 0.7);
 
       ctx.beginPath();
       ctx.arc(xStart, yStart, 1, 0, 2 * Math.PI);
