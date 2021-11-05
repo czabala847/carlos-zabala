@@ -7,39 +7,12 @@ import imgSurface from "../assets/img/hero_footer.png";
 function HeroCanvas() {
   const canvasRef = React.useRef(null);
 
-  const randomNumber = (min, max) =>
-    Math.floor(Math.random() * (max - min + 1) + min);
-
-  const draw = (ctx) => {
+  const drawImage = (ctx, urlImage) => {
     const widthCanvas = ctx.canvas.width;
     const heightCanvas = ctx.canvas.height;
-
-    //Estrellas
-    ctx.save();
-    ctx.fillStyle = "#ffffff";
-
-    ctx.shadowColor = "white";
-    ctx.strokeStyle = "rgba(0,0,0,0.1)";
-    ctx.shadowBlur = 5;
-    ctx.shadowOffsetX = 0;
-    ctx.shadowOffsetY = 1;
-
-    let xStart, yStart;
-
-    for (let index = 0; index < 70; index++) {
-      xStart = randomNumber(0, widthCanvas);
-      yStart = randomNumber(0, heightCanvas * 0.7);
-
-      ctx.beginPath();
-      ctx.arc(xStart, yStart, 1, 0, 2 * Math.PI);
-      ctx.fill();
-    }
-
-    ctx.restore();
-
     //Imagen de la superficie
     const img = new Image();
-    img.src = imgSurface;
+    img.src = urlImage;
 
     img.onload = () => {
       ctx.save();
@@ -64,18 +37,21 @@ function HeroCanvas() {
     canvas.width = displayWidth;
     canvas.height = displayHeight;
 
-    //Our draw came here
+    let frameCount = 0;
+    let animationFrameId;
+
     const render = () => {
-      //   frameCount++;
-      //   draw(ctx, frameCount);
-      draw(ctx);
-      //   animationFrameId = window.requestAnimationFrame(render);
+      frameCount++;
+      drawStart(ctx, frameCount);
+      drawImage(ctx, imgSurface);
+      // animationFrameId = window.requestAnimationFrame(render);
     };
+
     render();
 
-    // return () => {
-    //   window.cancelAnimationFrame(animationFrameId);
-    // };
+    return () => {
+      window.cancelAnimationFrame(animationFrameId);
+    };
   }, []);
 
   return (
