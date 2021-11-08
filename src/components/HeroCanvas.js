@@ -2,12 +2,12 @@ import React from "react";
 
 import "../styles/components/HeroCanvas.scss";
 
-import imgSurface from "../assets/img/hero_footer.png";
+// import imgSurface from "../assets/img/hero_footer.png";
 import { useDrawCanvas } from "../hooks/useDrawCanvas";
 
 function HeroCanvas() {
   const canvasRef = React.useRef(null);
-  const { drawImage, drawStars } = useDrawCanvas();
+  const { drawStars, initCanvas } = useDrawCanvas();
 
   React.useEffect(() => {
     const canvas = canvasRef.current;
@@ -16,23 +16,18 @@ function HeroCanvas() {
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
 
-    // let frameCount = 0;
-    // let animationFrameId;
+    initCanvas(ctx);
 
-    const render = () => {
-      // frameCount++;
-      // drawStart(ctx, frameCount);
-      // drawImage(ctx, imgSurface);
-      // animationFrameId = window.requestAnimationFrame(render);
+    let interval;
+
+    interval = setInterval(() => {
+      // animationStar(ctx);
       drawStars(ctx);
-      drawImage(ctx, imgSurface);
+    }, 100);
+
+    return () => {
+      clearInterval(interval);
     };
-
-    render();
-
-    // return () => {
-    //   window.cancelAnimationFrame(animationFrameId);
-    // };
   }, []);
 
   return (
