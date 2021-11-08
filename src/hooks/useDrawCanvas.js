@@ -1,8 +1,6 @@
 import React from "react";
 
 function useDrawCanvas() {
-  const [stars, setStars] = React.useState([]);
-
   const randomNumber = (min, max) =>
     Math.floor(Math.random() * (max - min + 1) + min);
 
@@ -18,7 +16,7 @@ function useDrawCanvas() {
       arrayStars.push({ x, y, size });
     }
 
-    setStars(arrayStars);
+    return arrayStars;
   };
 
   const drawStars = (ctx) => {
@@ -38,9 +36,10 @@ function useDrawCanvas() {
     ctx.shadowOffsetY = 1;
     //
 
-    generateStars(150, width, height * 0.7);
+    const arrayStars = generateStars(150, width, height * 0.7);
+    // generateStars(150, 1000, 1000);
 
-    stars.forEach((star) => {
+    arrayStars.forEach((star) => {
       ctx.beginPath();
       ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
       ctx.fill();
