@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 
 function useDrawCanvas() {
   let arrayStars = [];
@@ -100,7 +100,7 @@ function useDrawCanvas() {
   //   };
   // };
 
-  return { drawStars, animationStar, initCanvas };
+  return { drawStars, initCanvas };
 }
 
 export { useDrawCanvas };
