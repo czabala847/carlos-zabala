@@ -10,7 +10,7 @@ function useDrawCanvas() {
     const height = ctx.canvas.height;
     const width = ctx.canvas.width;
 
-    generateStars(200, width, height * 0.7);
+    generateStars(200, width, height);
   };
 
   const generateStars = (quantity, limit_x, limit_y) => {

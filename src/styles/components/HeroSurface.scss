@@ -23,19 +23,21 @@
     background-size: 100%;
     background-repeat: no-repeat;
     background-position-y: 100%;
-    opacity: 0.1;
+    // opacity: 0.1;
     height: 100%;
   }
 
   & .fog {
     @extend .hero_position;
     background-image: url("../../assets/img/clouds-texture.png");
-    height: 40%;
+    // border: 1px solid red;
+    height: 100%;
     // background-position-x: 0px;
     width: 100%;
     transition: 0.3s;
-    opacity: 0.3;
-    // animation: cloud_moved 10s linear infinite;
+    // opacity: 0.3;
+    z-index: 4;
+    // animation: cloud_moved 60s linear infinite;
   }
 }
 
