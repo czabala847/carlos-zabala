@@ -19,7 +19,7 @@
 
   & .surface {
     @extend .hero_position;
-    background-image: url("../../assets/img/hero_footer.png");
+    background-image: url("../../assets/img/hero_footer_2.png");
     background-size: 100%;
     background-repeat: no-repeat;
     background-position-y: 100%;
@@ -29,7 +29,7 @@
 
   & .fog {
     @extend .hero_position;
-    background-image: url("../../assets/img/clouds-texture.png");
+    // background-image: url("../../assets/img/clouds-texture.png");
     // border: 1px solid red;
     height: 100%;
     // background-position-x: 0px;
