@@ -1,0 +1,10 @@
+@import "../lib/vars";
+
+.Projects {
+  padding: 2rem 0;
+  color: $color-white;
+
+  & h2 {
+    font-size: 2rem;
+  }
+}

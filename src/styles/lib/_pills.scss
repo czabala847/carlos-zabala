@@ -1,0 +1,31 @@
+@import "../lib/vars";
+
+.pill {
+  font-size: 0.7rem;
+  padding: 0rem 0.5rem;
+  border-radius: 30px;
+  color: $color-black;
+  font-weight: bold;
+
+  &__skyblue {
+    background-color: $color-skyblue;
+  }
+
+  &__orange {
+    background: $color-orange;
+  }
+
+  &__blue {
+    background: $color-blue;
+    color: $color-white;
+  }
+
+  &__pink {
+    background: $color-pink;
+    color: $color-white;
+  }
+
+  &__default {
+    background-color: $color-white;
+  }
+}

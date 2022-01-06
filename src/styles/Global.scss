@@ -7,8 +7,11 @@
 @import "./lib/vars";
 @import "./lib/containers";
 @import "./lib/animations";
+@import "./lib/pills";
+@import "./lib/buttons";
 
-body {
+body,
+button {
   margin: 0;
   font-family: "Quicksand", sans-serif;
   // overflow: hidden;

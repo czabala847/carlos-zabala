@@ -26,7 +26,7 @@ function Header() {
       <div className="container">
         <div className="Header_container">
           <figure className="Logo">
-            <img src={logo} alt="Logo Carlos Zabala" width={100} />{" "}
+            <img src={logo} alt="Logo Carlos Zabala" width={120} />{" "}
           </figure>
 
           <div className="Menu">

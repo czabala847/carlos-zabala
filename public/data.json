@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "To-Do list",
+    "description": "Página para crear lista de cosas por hacer, como una lista de recordatorios, se pueden marcar las tareas que ya se han realizado.",
+    "url": "https://czabala847.github.io/react-platzi/",
+    "technologies": ["React JS"],
+    "img": "https://i.ibb.co/r6Yj2vg/czabala847-github-io-react-platzi.png"
+  },
+  {
+    "id": 2,
+    "name": "Calculadora de propinas",
+    "description": "Aplicación de calculadora de propinas.",
+    "url": "https://nostalgic-davinci-6c69c0.netlify.app/",
+    "technologies": ["Javascript"],
+    "img": "https://i.ibb.co/g6VWwmm/nostalgic-davinci-6c69c0-netlify-app.png"
+  },
+  {
+    "id": 3,
+    "name": "Card NFT",
+    "description": "Diseño de una card.",
+    "url": "https://unruffled-neumann-257073.netlify.app/",
+    "technologies": ["SASS"],
+    "img": "https://i.ibb.co/By25hYw/unruffled-neumann-257073-netlify-app.png"
+  }
+]
