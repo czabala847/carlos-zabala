@@ -12,6 +12,7 @@ import {
 import { Link } from "react-router-dom";
 
 import "../styles/components/Header.scss";
+import logo from "../assets/img/logo_white.png";
 
 function Header() {
   const [showMenu, setShowMenu] = React.useState(false);
@@ -24,15 +25,17 @@ function Header() {
     <header className="Header">
       <div className="container">
         <div className="Header_container">
-          <figure className="Logo">Logo</figure>
+          <figure className="Logo">
+            <img src={logo} alt="Logo Carlos Zabala" width={100} />{" "}
+          </figure>
 
           <div className="Menu">
-            <div className="Menu_icon" onClick={handleShowMenu}>
+            <div className="Menu_icon box-shadow" onClick={handleShowMenu}>
               <FontAwesomeIcon icon={showMenu ? faTimes : faBars} />
             </div>
 
             {showMenu && (
-              <nav className="Menu_nav">
+              <nav className="Menu_nav box-shadow">
                 <ul>
                   <li>
                     <Link to="/">
