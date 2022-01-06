@@ -16,17 +16,28 @@ import logo from "../assets/img/logo_white.png";
 
 function Header() {
   const [showMenu, setShowMenu] = React.useState(false);
+  const [offset, setOffset] = React.useState(0);
+  const refHeader = React.useRef(null);
 
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
   };
 
+  React.useEffect(() => {
+    window.onscroll = () => {
+      setOffset(window.pageYOffset);
+    };
+  }, []);
+
   return (
-    <header className="Header">
+    <header
+      className={offset > 0 ? "Header bg-black" : "Header"}
+      ref={refHeader}
+    >
       <div className="container">
         <div className="Header_container">
           <figure className="Logo">
-            <img src={logo} alt="Logo Carlos Zabala" width={120} />{" "}
+            <img src={logo} alt="Logo Carlos Zabala" />
           </figure>
 
           <div className="Menu">
@@ -43,6 +54,12 @@ function Header() {
                     </Link>
                   </li>
                   <li>
+                    <a href="#projects">
+                      <FontAwesomeIcon icon={faFolderOpen} />
+                      <span>Portafolio</span>
+                    </a>
+                  </li>
+                  <li>
                     <a href="#about">
                       <FontAwesomeIcon icon={faUser} /> <span>Acerca de</span>
                     </a>
@@ -50,12 +67,6 @@ function Header() {
                   <li>
                     <Link to="/">
                       <FontAwesomeIcon icon={faCogs} /> <span>Habilidades</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/">
-                      <FontAwesomeIcon icon={faFolderOpen} />
-                      <span>Portafolio</span>
                     </Link>
                   </li>
                 </ul>

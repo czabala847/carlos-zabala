@@ -18,6 +18,10 @@
   text-align: center;
 }
 
+.bg-black {
+  background-color: $color-black;
+}
+
 @media only screen and (max-width: 1023px) {
   .container {
     grid-template-columns: minmax(auto, 768px);

@@ -1,3 +1,5 @@
+@import "../lib/vars";
+
 .Project {
   display: grid;
   grid-template-columns: repeat(2, 50%);
@@ -5,7 +7,7 @@
   box-sizing: border-box;
   border-radius: 30px;
   overflow: hidden;
-  background-color: #241231;
+  background-color: $color-purple;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
   margin: 1rem 0;
 
