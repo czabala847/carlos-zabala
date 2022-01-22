@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/czabala847/carlos-zabala/static/css/main.e077d77f.chunk.css",
+    "main.js": "/czabala847/carlos-zabala/static/js/main.bca0f3e0.chunk.js",
+    "main.js.map": "/czabala847/carlos-zabala/static/js/main.bca0f3e0.chunk.js.map",
+    "runtime-main.js": "/czabala847/carlos-zabala/static/js/runtime-main.8168c352.js",
+    "runtime-main.js.map": "/czabala847/carlos-zabala/static/js/runtime-main.8168c352.js.map",
+    "static/js/2.92c83784.chunk.js": "/czabala847/carlos-zabala/static/js/2.92c83784.chunk.js",
+    "static/js/2.92c83784.chunk.js.map": "/czabala847/carlos-zabala/static/js/2.92c83784.chunk.js.map",
+    "index.html": "/czabala847/carlos-zabala/index.html",
+    "static/css/main.e077d77f.chunk.css.map": "/czabala847/carlos-zabala/static/css/main.e077d77f.chunk.css.map",
+    "static/js/2.92c83784.chunk.js.LICENSE.txt": "/czabala847/carlos-zabala/static/js/2.92c83784.chunk.js.LICENSE.txt",
+    "static/media/HeroSurface.scss": "/czabala847/carlos-zabala/static/media/hero_footer_2.e74c5f00.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8168c352.js",
+    "static/js/2.92c83784.chunk.js",
+    "static/css/main.e077d77f.chunk.css",
+    "static/js/main.bca0f3e0.chunk.js"
+  ]
+}
