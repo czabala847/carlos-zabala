@@ -1,8 +1,7 @@
 import React from "react";
-
 import "../styles/containers/Projects.scss";
 
-const Projects = ({data, render}) => {
+const Projects = ({ data, render }) => {
   return (
     <section className="Projects" id="projects">
       <div className="container">

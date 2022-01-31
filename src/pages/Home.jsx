@@ -7,7 +7,6 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
 import { useProjects } from "../hooks/useProjects";
-
 import "../styles/pages/Home.scss";
 
 function Home() {
