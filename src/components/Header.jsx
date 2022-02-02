@@ -60,9 +60,9 @@ function Header() {
                     </a>
                   </li>
                   <li>
-                    <a href="#about">
+                    <Link to="/about">
                       <FontAwesomeIcon icon={faUser} /> <span>Acerca de</span>
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <Link to="/">

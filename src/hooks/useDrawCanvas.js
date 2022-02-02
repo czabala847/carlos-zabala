@@ -1,7 +1,10 @@
-// import React from "react";
+import React from "react";
+
+const QUANTITY_STARS = 200;
 
 function useDrawCanvas() {
-  let arrayStars = [];
+  const [stars, setStars] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
 
   const randomNumber = (min, max) =>
     Math.floor(Math.random() * (max - min + 1) + min);
@@ -9,14 +12,13 @@ function useDrawCanvas() {
   const initCanvas = (ctx) => {
     const height = ctx.canvas.height;
     const width = ctx.canvas.width;
-
-    generateStars(200, width, height);
+    generateStars(width, height);
   };
 
-  const generateStars = (quantity, limit_x, limit_y) => {
-    arrayStars = [];
+  const generateStars = (limit_x, limit_y) => {
+    const arrayStars = [];
 
-    for (let i = 0; i < quantity; i++) {
+    for (let i = 0; i < QUANTITY_STARS; i++) {
       const x = randomNumber(0, limit_x);
       const y = randomNumber(0, limit_y);
 
@@ -25,13 +27,14 @@ function useDrawCanvas() {
       arrayStars.push({ x, y, size });
     }
 
-    // return arrayStars;
+    setStars(arrayStars);
+    setLoading(false);
   };
 
   const animationStar = (limit_x) => {
     let change = 0.15;
 
-    arrayStars.forEach((star) => {
+    const newStars = stars.map((star) => {
       star.x += 0.5;
 
       if (star.x > limit_x) {
@@ -45,19 +48,19 @@ function useDrawCanvas() {
       }
 
       star.size += change;
+
+      return star;
     });
 
-    return arrayStars;
+    return newStars;
   };
 
   const drawStars = (ctx) => {
     const height = ctx.canvas.height;
     const width = ctx.canvas.width;
 
+    setStars(animationStar(width));
     ctx.clearRect(0, 0, width, height);
-
-    animationStar(width);
-
     ctx.save();
 
     //Estilos
@@ -67,40 +70,19 @@ function useDrawCanvas() {
     ctx.shadowBlur = 5;
     ctx.shadowOffsetX = 0;
     ctx.shadowOffsetY = 1;
-    //
 
-    // const arrayStars = generateStars(150, width, height * 0.7);
-
-    arrayStars.forEach((star) => {
+    stars.forEach((star) => {
       ctx.beginPath();
       ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
       ctx.fill();
     });
 
     ctx.restore();
+
+    // requestAnimationFrame(() => drawStars(ctx));
   };
 
-  // const drawImage = (ctx, urlImage) => {
-  //   const height = ctx.canvas.height;
-  //   const width = ctx.canvas.width;
-
-  //   const img = new Image();
-  //   img.src = urlImage;
-
-  //   img.onload = () => {
-  //     ctx.save();
-  //     ctx.globalAlpha = 0.1;
-
-  //     const heightImage = height * 0.4;
-  //     const yImage = height * 0.6;
-  //     const widthImage = width;
-
-  //     ctx.drawImage(img, 0, yImage, widthImage, heightImage);
-  //     ctx.restore();
-  //   };
-  // };
-
-  return { drawStars, initCanvas };
+  return { drawStars, initCanvas, loading };
 }
 
 export { useDrawCanvas };
