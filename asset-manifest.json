@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "/carlos-zabala/static/css/main.a2320658.chunk.css",
-    "main.js": "/carlos-zabala/static/js/main.b03f301a.chunk.js",
-    "main.js.map": "/carlos-zabala/static/js/main.b03f301a.chunk.js.map",
+    "main.js": "/carlos-zabala/static/js/main.0ae971bb.chunk.js",
+    "main.js.map": "/carlos-zabala/static/js/main.0ae971bb.chunk.js.map",
     "runtime-main.js": "/carlos-zabala/static/js/runtime-main.3e30be85.js",
     "runtime-main.js.map": "/carlos-zabala/static/js/runtime-main.3e30be85.js.map",
-    "static/js/2.c24fafe1.chunk.js": "/carlos-zabala/static/js/2.c24fafe1.chunk.js",
-    "static/js/2.c24fafe1.chunk.js.map": "/carlos-zabala/static/js/2.c24fafe1.chunk.js.map",
+    "static/js/2.21ecf754.chunk.js": "/carlos-zabala/static/js/2.21ecf754.chunk.js",
+    "static/js/2.21ecf754.chunk.js.map": "/carlos-zabala/static/js/2.21ecf754.chunk.js.map",
     "index.html": "/carlos-zabala/index.html",
     "static/css/main.a2320658.chunk.css.map": "/carlos-zabala/static/css/main.a2320658.chunk.css.map",
-    "static/js/2.c24fafe1.chunk.js.LICENSE.txt": "/carlos-zabala/static/js/2.c24fafe1.chunk.js.LICENSE.txt",
+    "static/js/2.21ecf754.chunk.js.LICENSE.txt": "/carlos-zabala/static/js/2.21ecf754.chunk.js.LICENSE.txt",
     "static/media/HeroSurface.scss": "/carlos-zabala/static/media/hero_footer_2.e74c5f00.png"
   },
   "entrypoints": [
     "static/js/runtime-main.3e30be85.js",
-    "static/js/2.c24fafe1.chunk.js",
+    "static/js/2.21ecf754.chunk.js",
     "static/css/main.a2320658.chunk.css",
-    "static/js/main.b03f301a.chunk.js"
+    "static/js/main.0ae971bb.chunk.js"
   ]
 }
