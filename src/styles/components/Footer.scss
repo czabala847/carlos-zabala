@@ -4,4 +4,12 @@
   background-color: $color-black;
   color: $color-white;
   padding: 2rem 0;
+  text-align: center;
+
+  &__icon {
+    height: 80px;
+    width: 80px;
+    font-size: 3rem;
+    color: $color-white;
+  }
 }

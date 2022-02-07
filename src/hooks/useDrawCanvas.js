@@ -5,84 +5,118 @@ const QUANTITY_STARS = 200;
 function useDrawCanvas() {
   const [stars, setStars] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
+  const [ctx, setCtx] = React.useState(null);
+  const refElement = React.useRef(null);
 
   const randomNumber = (min, max) =>
     Math.floor(Math.random() * (max - min + 1) + min);
 
-  const initCanvas = (ctx) => {
-    const height = ctx.canvas.height;
-    const width = ctx.canvas.width;
-    generateStars(width, height);
-  };
+  React.useEffect(() => {
+    const canvas = refElement.current;
+    setCtx(canvas.getContext("2d"));
 
-  const generateStars = (limit_x, limit_y) => {
-    const arrayStars = [];
+    let interval;
 
-    for (let i = 0; i < QUANTITY_STARS; i++) {
-      const x = randomNumber(0, limit_x);
-      const y = randomNumber(0, limit_y);
+    /**
+     * Crear estrellas con posición y tamaños random
+     */
+    const generateStars = () => {
+      const arrayStars = [];
 
-      const size = Math.random();
+      for (let i = 0; i < QUANTITY_STARS; i++) {
+        const x = randomNumber(0, ctx.canvas.width);
+        const y = randomNumber(0, ctx.canvas.height);
+        const size = Math.random();
 
-      arrayStars.push({ x, y, size });
-    }
-
-    setStars(arrayStars);
-    setLoading(false);
-  };
-
-  const animationStar = (limit_x) => {
-    let change = 0.15;
-
-    const newStars = stars.map((star) => {
-      star.x += 0.5;
-
-      if (star.x > limit_x) {
-        star.x = 0;
+        arrayStars.push({ x, y, size });
       }
 
-      if (star.size < 0.1) {
-        change = 0.1;
-      } else if (star.size > 0.9) {
-        change = -0.1;
+      setStars(arrayStars);
+      setLoading(false);
+    };
+
+    /**
+     * Cambiar el tamaño y posición de las estrellas, para silumar animación de movimiento
+     */
+    const animationStar = () => {
+      let change = 0.15;
+
+      stars.map((star) => {
+        star.x += 0.5;
+
+        if (star.x > ctx.canvas.width) {
+          star.x = 0;
+        }
+
+        if (star.size < 0.1) {
+          change = 0.1;
+        } else if (star.size > 0.9) {
+          change = -0.1;
+        }
+
+        star.size += change;
+
+        return star;
+      });
+    };
+
+    /**
+     * Pintar estrellas en el lienzo
+     */
+    const drawStars = () => {
+      // setStars(animationStar());
+      animationStar();
+      ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+      ctx.save();
+
+      //Estilos
+      ctx.fillStyle = "white";
+      ctx.shadowColor = "white";
+      ctx.strokeStyle = "rgba(0,0,0,0.1)";
+      ctx.shadowBlur = 5;
+      ctx.shadowOffsetX = 0;
+      ctx.shadowOffsetY = 1;
+
+      stars.forEach((star) => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
+        ctx.fill();
+      });
+
+      ctx.restore();
+
+      // requestAnimationFrame(() => drawStars(ctx));
+    };
+
+    const initRender = () => {
+      if (ctx) {
+        generateStars();
+
+        //Repetir animación
+        interval = setInterval(() => {
+          drawStars();
+        }, 100);
       }
+    };
 
-      star.size += change;
+    const handleResize = (e) => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
 
-      return star;
-    });
+    //para que se ejecute al iniciar
+    handleResize();
+    initRender();
 
-    return newStars;
-  };
+    // window.addEventListener("resize", handleResize);
 
-  const drawStars = (ctx) => {
-    const height = ctx.canvas.height;
-    const width = ctx.canvas.width;
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      clearInterval(interval);
+    };
+  }, [ctx, refElement, loading]);
 
-    setStars(animationStar(width));
-    ctx.clearRect(0, 0, width, height);
-    ctx.save();
-
-    //Estilos
-    ctx.fillStyle = "white";
-    ctx.shadowColor = "white";
-    ctx.strokeStyle = "rgba(0,0,0,0.1)";
-    ctx.shadowBlur = 5;
-    ctx.shadowOffsetX = 0;
-    ctx.shadowOffsetY = 1;
-
-    stars.forEach((star) => {
-      ctx.beginPath();
-      ctx.arc(star.x, star.y, star.size, 0, 2 * Math.PI);
-      ctx.fill();
-    });
-
-    ctx.restore();
-
-    // requestAnimationFrame(() => drawStars(ctx));
-  };
-
-  return { drawStars, initCanvas, loading };
+  return { refElement };
 }
 
 export { useDrawCanvas };

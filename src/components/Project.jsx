@@ -46,10 +46,12 @@ const Project = ({ data }) => {
             </div>
           </div>
           <div className="Project__img fade-in">
+            {/* <div className="Project__deg"></div> */}
             <figure>
               <img src={data.img} alt={"Imagen " + data.name} />
             </figure>
           </div>
+          <div className="Project__overlay"></div>
         </>
       )}
     </div>

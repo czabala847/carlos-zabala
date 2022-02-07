@@ -12,10 +12,14 @@ $color-skyblue: #61dafb;
 $color-dark-blue: #001a57;
 
 $color-orange: #f7df1e;
-
 $color-pink: #d75893;
-
 $color-purple: #241231;
+
+$bg-radial: radial-gradient(
+  circle,
+  rgba(94, 48, 126, 1) 0%,
+  rgba(36, 18, 49, 1) 100%
+);
 
 // #211030
 
