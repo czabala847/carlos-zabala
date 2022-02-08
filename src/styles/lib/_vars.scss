@@ -21,10 +21,18 @@ $bg-radial: radial-gradient(
   rgba(36, 18, 49, 1) 100%
 );
 
+$bg-main: linear-gradient(
+  315deg,
+  rgba(33, 16, 48, 1) 0%,
+  rgba(0, 0, 0, 1) 100%
+);
+
 // #211030
 
 //Tamaños
 $header-height: 80px;
+$footer-height: 150px;
+$content-height: calc(100vh - 230px);
 
 //Z-Index
 $header-zindex: 3;

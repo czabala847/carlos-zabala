@@ -1,11 +1,12 @@
 import React from "react";
-import { HashRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route, HashRouter } from "react-router-dom";
 import { Layout } from "../containers/Layout";
-
+// HashRouter,
 // pages
 import { Home } from "../pages/Home";
 import { About } from "../pages/About";
 
+// "homepage": "https://czabala847.github.io/carlos-zabala"
 function App() {
   return (
     <HashRouter basename="/">

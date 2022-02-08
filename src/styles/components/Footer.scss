@@ -1,10 +1,13 @@
 @import "../lib/vars";
+@import "../lib/containers";
 
 .Footer {
   background-color: $color-black;
   color: $color-white;
-  padding: 2rem 0;
   text-align: center;
+  height: $footer-height;
+  box-sizing: border-box;
+  @extend .f-center;
 
   &__icon {
     height: 80px;

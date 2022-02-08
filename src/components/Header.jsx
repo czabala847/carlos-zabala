@@ -6,8 +6,6 @@ import {
   faTimes,
   faHome,
   faUser,
-  faCogs,
-  faFolderOpen,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
@@ -54,19 +52,8 @@ function Header() {
                     </Link>
                   </li>
                   <li>
-                    <a href="#projects">
-                      <FontAwesomeIcon icon={faFolderOpen} />
-                      <span>Portafolio</span>
-                    </a>
-                  </li>
-                  <li>
                     <Link to="/about">
                       <FontAwesomeIcon icon={faUser} /> <span>Acerca de</span>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/">
-                      <FontAwesomeIcon icon={faCogs} /> <span>Habilidades</span>
                     </Link>
                   </li>
                 </ul>
