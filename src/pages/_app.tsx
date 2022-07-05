@@ -1,16 +1,16 @@
 // import App from 'next/app'
 import { Layout } from "containers/Layout";
-
 import { GlobalStyle } from "../styles/GlobalStyle";
+import { AppProvider } from "../store/AppProvider";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <>
+    <AppProvider>
       <GlobalStyle />
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </>
+    </AppProvider>
   );
 }
 
