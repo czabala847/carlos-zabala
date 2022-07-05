@@ -1,14 +1,14 @@
 import React from "react";
 
 import { Hero } from "containers/Hero";
-
+import { Projects } from "containers/Projects";
 import { HomeContainer } from "styles/pages/HomeStyles";
 
 const Home = () => {
   return (
     <HomeContainer>
       <Hero />
-      Projects
+      <Projects />
     </HomeContainer>
   );
 };
