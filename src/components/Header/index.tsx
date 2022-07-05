@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,13 +24,20 @@ import {
 
 const Header: React.FC = () => {
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [offset, setOffset] = React.useState<number>(0);
 
   const handleShowMenu = (): void => {
     setShowMenu(!showMenu);
   };
 
+  useEffect(() => {
+    window.onscroll = () => {
+      setOffset(window.pageYOffset);
+    };
+  }, []);
+
   return (
-    <HeaderMain>
+    <HeaderMain dark={offset > 0}>
       <Container>
         <HeaderContainer>
           <Logo>

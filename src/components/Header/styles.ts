@@ -11,6 +11,7 @@ export const Header = styled.header`
   box-sizing: border-box;
   transition: 0.3s;
   top: 0;
+  background: ${(props) => (props.dark ? "#000000" : "transparent")};
 `;
 
 export const HeaderContainer = styled.div`

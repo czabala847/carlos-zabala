@@ -8,6 +8,7 @@ export enum COLORS {
 // Tamaños
 export enum HEIGHT_SIZE {
   HEADER = "80px",
+  FOOTER = "150px",
 }
 
 //Index
