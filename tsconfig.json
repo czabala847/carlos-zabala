@@ -6,6 +6,7 @@
     "paths": {
       "@pages/*": ["pages/*"],
       "@components/*": ["components/*"],
+      "@hooks/*": ["hooks/*"],
       "@images/*": ["assets/images/*"]
     },
     "allowJs": true,

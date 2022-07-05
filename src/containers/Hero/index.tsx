@@ -1,16 +1,20 @@
 import React from "react";
-import { HeroContainer } from "./styles";
+import { HeroContainer, HeroTitle, HeroList } from "./styles";
+import { Container } from "styles/utils/Containers";
+
+import { HeroCanvas } from "@components/HeroCanvas";
 
 const Hero = () => {
   return (
     <HeroContainer>
-      <div className="container">
-        <h1>Hola! Soy Carlos Zabala!</h1>
-        <ul className="List">
+      <Container>
+        <HeroTitle>Hola! Soy Carlos Zabala!</HeroTitle>
+        <HeroList>
           <li>UI/UX</li>
           <li>Desarrollo Web</li>
-        </ul>
-      </div>
+        </HeroList>
+      </Container>
+      <HeroCanvas />
     </HeroContainer>
   );
 };
