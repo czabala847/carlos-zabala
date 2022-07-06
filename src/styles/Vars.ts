@@ -3,10 +3,12 @@ export enum COLORS {
   WHITE = "#ffffff",
   BLACK = "#000000",
   PURPLE = "#241231",
+  BLUE = "#00298a",
   DARK_BLUE = "#001a57",
   SKY_BLUE = "#61dafb",
   ORANGE = "#f7df1e",
   PINK = "#d75893",
+  RED = "#D6002F",
 }
 
 // Background

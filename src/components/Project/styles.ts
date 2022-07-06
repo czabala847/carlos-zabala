@@ -74,6 +74,14 @@ const PillVariants: PillVariantsInterface = {
     backgroundColor: COLORS.BLACK,
     color: COLORS.WHITE,
   },
+  angular: {
+    backgroundColor: COLORS.RED,
+    color: COLORS.WHITE,
+  },
+  typescript: {
+    backgroundColor: COLORS.BLUE,
+    color: COLORS.WHITE,
+  },
 };
 
 export const Pill = styled.span<{ type: string }>`

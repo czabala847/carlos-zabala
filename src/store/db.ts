@@ -42,4 +42,23 @@ export const db: Project[] = [
     technologies: ["React JS", "React Apollo", "Styled components"],
     img: "/images/petgram.png",
   },
+  {
+    id: 5,
+    name: "Gifs App",
+    description:
+      "Proyecto de búsqueda de gifs por medio de la API giphy, la aplicación permite buscar gifs relacionados a la busqueda que se le suministre en en la barra de búsqueda, se guardará también un historial de las ultimas 10 búsquedas en localStorage.",
+    urlPublic: "https://sparkly-tarsier-5fab7e.netlify.app/",
+    urlRepo: "https://github.com/czabala847/gifs-app",
+    technologies: ["Angular"],
+    img: "/images/gifsapp.png",
+  },
+  {
+    id: 6,
+    name: "Avocado Store",
+    description: "Comercio electronico de venta de Aguacates.",
+    urlPublic: "https://nextjs-platzi-nh2xeo201-czabala847.vercel.app/",
+    urlRepo: "https://github.com/czabala847/nextjs-platzi",
+    technologies: ["Next", "Typescript"],
+    img: "/images/avocado.png",
+  },
 ];
