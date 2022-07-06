@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 import { COLORS, HEIGHT_SIZE, INDEX, boxShadow } from "styles/Vars";
 
-export const Header = styled.header`
+export const Header = styled.header<{ dark: boolean }>`
   color: ${COLORS.WHITE};
   width: 100%;
   height: ${HEIGHT_SIZE.HEADER};

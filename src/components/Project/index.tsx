@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 import { Project as ProjectInterface } from "@models/types";
 import {
@@ -7,6 +6,8 @@ import {
   ProjectContent,
   PillContainer,
   Pill,
+  ProjectImage,
+  ProjectImageContainer,
 } from "./styles";
 import { ButtonA, ButtonContainer } from "@styles/utils/Buttons";
 
@@ -38,15 +39,15 @@ const Project: React.FC<Props> = ({ project }) => {
       </ProjectContent>
 
       {/* <div className="Project__img fade-in"> */}
-      <Image
-        src={project.img}
-        alt={"Imagen " + project.name}
-        width={547}
-        height={280}
-        layout="responsive"
-      />
-      {/* </div> */}
-      <div className="Project__overlay"></div>
+      <ProjectImageContainer>
+        <ProjectImage
+          src={project.img}
+          alt={"Imagen " + project.name}
+          width={600}
+          height={600}
+          layout="fill"
+        />
+      </ProjectImageContainer>
     </ProjectMain>
   );
 };

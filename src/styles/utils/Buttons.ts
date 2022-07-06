@@ -20,6 +20,8 @@ const ButtonBase = css<{ variant: string }>`
   cursor: pointer;
   transition: 0.3s;
   text-decoration: none;
+  text-align: center;
+  box-shadow: inset 0px -2px 3px rgb(0 0 0 / 30%);
 
   ${({ variant }) =>
     variant &&
@@ -48,5 +50,13 @@ export const ButtonContainer = styled.div`
 
   & > * {
     margin-right: 0.5rem;
+  }
+
+  @media only screen and (max-width: 425px) {
+    flex-direction: column;
+
+    & > * {
+      margin: 0.2rem 0;
+    }
   }
 `;
