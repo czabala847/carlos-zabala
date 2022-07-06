@@ -10,6 +10,7 @@ export const Footer = styled.section`
   text-align: center;
   height: ${HEIGHT_SIZE.FOOTER};
   box-sizing: border-box;
+  padding: 1rem 0;
 `;
 
 export const FooterIcon = styled.a`

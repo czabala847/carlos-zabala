@@ -3,6 +3,15 @@ export enum COLORS {
   WHITE = "#ffffff",
   BLACK = "#000000",
   PURPLE = "#241231",
+  DARK_BLUE = "#001a57",
+  SKY_BLUE = "#61dafb",
+  ORANGE = "#f7df1e",
+  PINK = "#d75893",
+}
+
+// Background
+export enum BACKGROUND {
+  RADIAL = "radial-gradient(circle, rgba(94, 48, 126, 1) 0%, rgba(36, 18, 49, 1) 100%)",
 }
 
 // Tamaños

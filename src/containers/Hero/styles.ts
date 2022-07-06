@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import Image from "next/image";
 import { COLORS, INDEX } from "styles/Vars";
 
 export const HeroContainer = styled.div`
@@ -42,4 +43,11 @@ export const HeroList = styled.ul`
   & li:nth-child(2) {
     margin-left: 3rem;
   }
+`;
+
+export const HeroImage = styled(Image)`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
 `;

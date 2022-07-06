@@ -1,8 +1,10 @@
 import React from "react";
-import { HeroContainer, HeroTitle, HeroList } from "./styles";
+import { HeroContainer, HeroTitle, HeroList, HeroImage } from "./styles";
 import { Container } from "styles/utils/Containers";
 
 import { HeroCanvas } from "@components/HeroCanvas";
+
+import backgroundImage from "@images/pngegg.png";
 
 const Hero = () => {
   return (
@@ -15,6 +17,7 @@ const Hero = () => {
         </HeroList>
       </Container>
       <HeroCanvas />
+      {/* <HeroImage src={backgroundImage} alt="" /> */}
     </HeroContainer>
   );
 };
