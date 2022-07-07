@@ -23,6 +23,7 @@ export const HeaderContainer = styled.div`
 
 export const Logo = styled.figure`
   margin: 0;
+  cursor: pointer;
 
   & img {
     height: 70px;

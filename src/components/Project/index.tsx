@@ -48,8 +48,6 @@ const Project: React.FC<Props> = ({ project }) => {
             <ProjectImage
               src={project.img}
               alt={"Imagen " + project.name}
-              width={600}
-              height={600}
               layout="fill"
             />
           </ProjectImageContainer>

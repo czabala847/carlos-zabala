@@ -14,6 +14,7 @@ export enum COLORS {
 // Background
 export enum BACKGROUND {
   RADIAL = "radial-gradient(circle, rgba(94, 48, 126, 1) 0%, rgba(36, 18, 49, 1) 100%)",
+  MAIN = "linear-gradient(315deg,rgba(33, 16, 48, 1) 0%,rgba(0, 0, 0, 1) 100%)",
 }
 
 // Tamaños

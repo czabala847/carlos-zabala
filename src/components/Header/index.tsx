@@ -41,7 +41,11 @@ const Header: React.FC = () => {
       <Container>
         <HeaderContainer>
           <Logo>
-            <Image src={logo} alt="Logo Carlos Zabala" />
+            <Link href="/" passHref>
+              <a href="replace">
+                <Image src={logo} alt="Logo Carlos Zabala" />
+              </a>
+            </Link>
           </Logo>
 
           <Menu>
@@ -53,14 +57,18 @@ const Header: React.FC = () => {
               <MenuNav>
                 <ul>
                   <li>
-                    <a>
-                      <FontAwesomeIcon icon={faHome} /> <span>Inicio</span>
-                    </a>
+                    <Link href="/">
+                      <a>
+                        <FontAwesomeIcon icon={faHome} /> <span>Inicio</span>
+                      </a>
+                    </Link>
                   </li>
                   <li>
-                    <a>
-                      <FontAwesomeIcon icon={faUser} /> <span>Acerca de</span>
-                    </a>
+                    <Link href="/about">
+                      <a>
+                        <FontAwesomeIcon icon={faUser} /> <span>Acerca de</span>
+                      </a>
+                    </Link>
                   </li>
                 </ul>
               </MenuNav>
