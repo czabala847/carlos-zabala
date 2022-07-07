@@ -8,7 +8,7 @@ import {
   AboutMe,
   ButtonContainer,
   DividerWaves,
-} from "./styles";
+} from "../styles/pages/AboutStyles";
 import { Container } from "@styles/utils/Containers";
 
 import profileImage from "@images/profile.png";
