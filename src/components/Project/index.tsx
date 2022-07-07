@@ -1,4 +1,5 @@
 import React from "react";
+import { useLazyLoading } from "@hooks/useLazyLoading";
 
 import { Project as ProjectInterface } from "@models/types";
 import {
@@ -16,38 +17,44 @@ type Props = {
 };
 
 const Project: React.FC<Props> = ({ project }) => {
-  return (
-    <ProjectMain>
-      <ProjectContent className="fade-in">
-        <h4>{project.name}</h4>
-        <PillContainer>
-          {project.technologies.map((technology, id) => (
-            <Pill key={id} type={technology}>
-              {technology}
-            </Pill>
-          ))}
-        </PillContainer>
-        <p>{project.description}</p>
-        <ButtonContainer>
-          <ButtonA target="_blank" href={project.urlPublic} variant="light">
-            Ir al sitio
-          </ButtonA>
-          <ButtonA target="_blank" href={project.urlRepo} variant="primary">
-            Repositorio
-          </ButtonA>
-        </ButtonContainer>
-      </ProjectContent>
+  const [show, refElement] = useLazyLoading();
 
-      {/* <div className="Project__img fade-in"> */}
-      <ProjectImageContainer>
-        <ProjectImage
-          src={project.img}
-          alt={"Imagen " + project.name}
-          width={600}
-          height={600}
-          layout="fill"
-        />
-      </ProjectImageContainer>
+  return (
+    <ProjectMain ref={refElement as React.MutableRefObject<HTMLDivElement>}>
+      {show && (
+        <>
+          <ProjectContent className="fade-in">
+            <h4>{project.name}</h4>
+            <PillContainer>
+              {project.technologies.map((technology, id) => (
+                <Pill key={id} type={technology}>
+                  {technology}
+                </Pill>
+              ))}
+            </PillContainer>
+            <p>{project.description}</p>
+            <ButtonContainer>
+              <ButtonA target="_blank" href={project.urlPublic} variant="light">
+                Ir al sitio
+              </ButtonA>
+              <ButtonA target="_blank" href={project.urlRepo} variant="primary">
+                Repositorio
+              </ButtonA>
+            </ButtonContainer>
+          </ProjectContent>
+
+          {/* <div className="Project__img fade-in"> */}
+          <ProjectImageContainer>
+            <ProjectImage
+              src={project.img}
+              alt={"Imagen " + project.name}
+              width={600}
+              height={600}
+              layout="fill"
+            />
+          </ProjectImageContainer>
+        </>
+      )}
     </ProjectMain>
   );
 };

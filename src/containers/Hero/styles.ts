@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import Image from "next/image";
 import { COLORS, INDEX } from "styles/Vars";
+import { scaleInCenter } from "@styles/utils/Animations";
 
 export const HeroContainer = styled.div`
   min-height: 100vh;
@@ -18,6 +19,7 @@ export const HeroTitle = styled.h1`
   font-weight: 700;
   z-index: ${INDEX.HERO};
   transition: 0.3s;
+  ${scaleInCenter()}
 
   @media (max-width: 768px) {
     font-size: 3rem;
@@ -29,6 +31,7 @@ export const HeroList = styled.ul`
   margin: 0;
   padding: 0;
   z-index: ${INDEX.HERO};
+  ${scaleInCenter()}
 
   & li {
     margin: 0;

@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 import Image from "next/image";
 import { COLORS, BACKGROUND } from "styles/Vars";
+import { fadeIn } from "@styles/utils/Animations";
 
 export const Project = styled.div`
   display: grid;
@@ -39,6 +40,7 @@ export const ProjectContent = styled.div`
   justify-content: center;
   z-index: 2;
   transition: 0.3s;
+  ${fadeIn()}
 
   & h4 {
     font-size: 1.5rem;
